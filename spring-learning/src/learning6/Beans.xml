@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="collectionInjection"
+		class="learning6.CollectionInjection">
+		<property name="map">
+			<map>
+				<entry key="1" value="map1" />
+				<entry key="2" value="map2" />
+				<entry key="3" value="map3" />
+			</map>
+		</property>
+		<property name="list">
+			<list>
+				<value>list item 1</value>
+				<value>list item 1</value>
+				<value>list item 1</value>
+			</list>
+		</property>
+		<property name="items">
+			<list>
+				<bean id="item1" class="learning6.Item">
+				    <property name="name" value="name1"></property>
+				</bean>
+                <bean id="item2" class="learning6.Item">
+                    <property name="name" value="name2"></property>
+                </bean>
+                <bean id="item3" class="learning6.Item">
+                    <property name="name" value="name3"></property>
+                </bean>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="item" class="learning6.Item"></bean>
+</beans>
