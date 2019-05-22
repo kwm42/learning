@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Switch, NavLink } from "react-router-dom";
-import Nav from '../nav'
+// import Nav from '../nav'
 import About from '../../pages/about/About'
 import Popular from '../../pages/popular/Popular'
 import Battle from '../../pages/battle/Battle'
@@ -28,7 +28,6 @@ class Container extends React.Component{
                         <NavLink to="/users/">Users</NavLink>
                     </li>
                 </ul>
-                <Nav />
                 <Switch>
                     <Route path="/" exact component={ Popular } />
                     <Route path="/about/" component={ About } />
