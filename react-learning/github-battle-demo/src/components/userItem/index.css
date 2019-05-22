@@ -1,0 +1,20 @@
+.user-item {
+    padding: 1.5em 0;
+    /* background-color: darkgray; */
+}
+
+.user-item .avatar{
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+    transition: .3s;
+}
+
+.user-item .avatar:hover {
+    transform: scale(1.2, 1.2) rotate(360deg);
+}
+
+.user-item a {
+    display: block;
+    text-align: center;
+}

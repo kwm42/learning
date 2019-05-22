@@ -1,0 +1,10 @@
+.user-list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.user-list div{
+    width: 15%;
+}

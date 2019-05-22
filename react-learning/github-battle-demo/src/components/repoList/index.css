@@ -1,0 +1,11 @@
+.grid-wrapper > div{
+    display: inline-block;
+    width: 23%;
+    padding: 0;
+    height: auto;
+    margin: 1%;
+}
+
+.grid-wrapper{
+    display: block
+}

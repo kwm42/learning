@@ -1,0 +1,30 @@
+.link-wrapper {
+    height: 60px;
+    line-height: 69px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    background-color: #34ace0;
+}
+
+.link-wrapper li{
+    list-style: none;
+    height: inherit;
+    line-height: inherit;
+}
+
+.link-wrapper a{
+    display: inline-block;
+    width: 100%;
+    height: inherit;
+    margin-right: 1em;
+    font-size: 1.5em;
+    text-decoration: none;
+    color: white;
+}
+
+.link-wrapper a:hover{
+    color: #4bcffa;
+}
