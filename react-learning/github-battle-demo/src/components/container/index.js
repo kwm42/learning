@@ -33,7 +33,7 @@ class Container extends React.Component{
                     <Route path="/about/" component={ About } />
                     <Route path="/battle/" component={ Battle } />
                     <Route path="/users/" component={ Users } />
-                    <Route path="/profile/:id" component={ Profile } />
+                    <Route path="/profile/:username" component={ Profile } />
                 </Switch>
               </div>
             </Router>

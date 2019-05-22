@@ -4,7 +4,7 @@ class Profile extends React.Component{
     render(){
         return (
             <div>
-                <h1>Profile param => { this.props.match.params.id }</h1>
+                <h1>Profile param => { this.props.match.params.username }</h1>
             </div>
         )
     }

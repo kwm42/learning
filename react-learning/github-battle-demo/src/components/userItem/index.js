@@ -8,7 +8,7 @@ class UserItem extends React.Component{
         return (
             <div className="user-item">
                 {/* <a href={ user.html_url }> */}
-                <a href={ '/profile/' + user.id }>
+                <a href={ '/profile/' + user.login }>
                     <img src={ user.avatar_url } alt="" className="avatar"/>
                 </a>
                 <a href={ user.html_url }>{ user.login }</a>
