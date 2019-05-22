@@ -3,6 +3,13 @@
     height: 100px;
 }
 
-.grid-item{
-    background-color: #efefef
+.repo-item{
+    background-color: #efefef;
+    border-radius: 3%;
+    box-shadow: -1px 10px 20px rgba(23, 23, 23, .5);
+    transition: .3s;
+}
+
+.repo-item:hover{
+    box-shadow: -10px 20px 40px rgba(23, 23, 23, .7);
 }

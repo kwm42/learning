@@ -4,7 +4,7 @@ import './index.css'
 class RepoItem extends React.Component{
     render(){
         return (
-            <div className="grid-item">
+            <div className="repo-item">
                 <h3>{ this.props.repo.full_name }</h3>
                 <img src={ this.props.repo.owner.avatar_url } alt="" className="avatar"/>
                 <p>{ this.props.repo.description }</p>

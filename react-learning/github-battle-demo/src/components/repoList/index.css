@@ -1,7 +1,6 @@
 .grid-wrapper > div{
     display: inline-block;
-    width: 23%;
-    padding: 0;
+    padding: 1em;
     height: auto;
     margin: 1%;
 }
