@@ -1,0 +1,24 @@
+.repo-list-item{
+
+}
+
+.profile-wrapper > div{
+    padding: 0 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between
+}
+
+.profile-wrapper .right{
+    overflow: auto;
+}
+
+.profile-wrapper .right li{
+    display: block;
+    background-color: antiquewhite;
+    margin-top: 1em;
+}
+
+.profile-wrapper .right li > *{
+    display: block
+}
