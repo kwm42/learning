@@ -17,3 +17,21 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+.battle-wrapper .player input{
+    height: 2em;
+    padding: 5px 10px;
+    border-radius: .5em;
+    border: 1px solid black;
+    box-shadow: none;
+    outline: none;
+}
+
+.battle-wrapper .player button{
+    height: 2em;
+    width: 25%;
+    background-color: orange;
+    border-radius: .5em;
+    box-shadow: none;
+    border: none;
+}
