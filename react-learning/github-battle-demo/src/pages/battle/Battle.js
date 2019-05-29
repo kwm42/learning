@@ -16,18 +16,23 @@ class Battle extends React.Component{
             <div className="battle-wrapper">
                 <div className="player">
                     <div>
+                        { this.state.playerOne ? (<img alt="" src={ this.state.playerOne && this.state.playerOne.avatar_url }/>) : <span />}
                         <input type="text" placeholder="player one name here" ref="input1" />
                         <button onClick={ () => this.getUserInfo(1) }>confirm</button>
-                        { this.state.playerOne ? (<img alt="" src={ this.state.playerOne && this.state.playerOne.avatar_url }/>) : <span />}
                     </div>
+                </div>
+                <div>
+                    <strong>VS</strong>
                 </div>
                 <div className="player">
                     <div>
+                        { this.state.playerTwo ? (<img alt="" src={ this.state.playerTwo && this.state.playerTwo.avatar_url }/>) : <span />}
                         <input type="text" placeholder="player two name here" ref="input2" />
                         <button onClick={ () => this.getUserInfo(2) }>confirm</button>
-                        { this.state.playerTwo ? (<img alt="" src={ this.state.playerTwo && this.state.playerTwo.avatar_url }/>) : <span />}
                     </div>
                 </div>
+
+
             </div>
         )
     }
