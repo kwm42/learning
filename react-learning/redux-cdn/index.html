@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.0.1/redux.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <script type="text/javascript">
+    // import createStore
+    const { createStore } = Redux
+    // the default state
+    const initState = {
+      todos: [],
+      posts: []
+    }
+    // reducer, any changes will pass through this function
+    const reducer = function(state = initState, action){
+      switch (action.type) {
+        case 'ADD_TODO':
+          state = {
+            ...state,
+            todos: [...state.todos, action.todo]
+          }
+          break;
+        default:
+      }
+      console.log(state);
+    }
+    // create a store with default value
+    const store = createStore(reducer)
+    // dispatch an action which will change store's value
+    store.dispatch({type: 'ADD_TODO', todo: 'read newspaper'})
+  </script>
+</body>
+</html>

@@ -1,15 +1,12 @@
-import React from 'react'
+import React from 'react';
 // import Rainbow from '../hoc/Rainbow'
-import Axios from 'axios'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 class Home extends React.Component {
-    state = {
-        posts: []
-    }
 
     render() {
-        let { posts } = this.state
+        let { posts } = this.props
         let postList = posts.length > 0 ? (
             posts.map(post => {
                 return (
@@ -36,14 +33,14 @@ class Home extends React.Component {
     }
 
     componentDidMount() {
-        Axios.get('https://jsonplaceholder.typicode.com/posts')
-            .then(res => {
-                this.setState({
-                    posts: res.data
-                })
-            })
+    }
+}
+
+const mapStoreToProps = (state) => {
+    return {
+        posts: state.posts
     }
 }
 
 // export default Rainbow(Home)
-export default Home
+export default connect(mapStoreToProps)(Home);
