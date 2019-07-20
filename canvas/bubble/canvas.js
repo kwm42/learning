@@ -44,11 +44,11 @@ function Circle(x, y, dx, dy, radius, fillStyle){
 
     if(this.x < mouse.x + 100 && this.x > mouse.x - 100 &&
        this.y < mouse.y + 100 && this.y > mouse.y - 100){
-      if(this.radius <= 100)
-        this. radius += 8;
+      if(this.radius <= 80)
+        this. radius += 6;
     }
     else{
-      this.radius = 35;
+      this.radius = 10;
     }
 
     this.x += this.dx;
@@ -58,12 +58,12 @@ function Circle(x, y, dx, dy, radius, fillStyle){
 }
 
 let circleArray = [];
-for(var i = 0; i < 260; ++i){
+for(var i = 0; i < 400; ++i){
   let x = Math.random() * window.innerWidth;
   let y = Math.random() * window.innerHeight;
-  let dx = (Math.random() - 0.5) * 12;
-  let dy = (Math.random() - 0.5) * 12;
-  let radius = Math.random() * 10 + 20;
+  let dx = (Math.random() - 0.5) * 8;
+  let dy = (Math.random() - 0.5) * 8;
+  let radius = Math.random() * 5 + 5;
   let fillStyle = color[Math.floor(Math.random() * color.length)]
   circleArray.push(new Circle(x, y, dx, dy, radius, fillStyle));
 }

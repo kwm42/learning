@@ -39,16 +39,26 @@ function Dot(x, y, radius, radians, color, speed){
   this.color = color;
   this.distance = myRandom(80, 150);
   this.speed = myRandom(0.02, 0.03);
+  let prePos = {
+    x: this.x,
+    y: this.y
+  }
 
   this.draw = function(){
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+    // ctx.lineWidth = radius * 2;
+    // ctx.stroke();
     ctx.fillStyle = this.color;
     ctx.fill();
+    ctx.moveTo(this.x, this.y);
+    ctx.lineTo(prePos.x, prePos.y);
     ctx.closePath();
   }
 
   this.update = function(){
+    prePos.x = this.x;
+    prePos.y = this.y;
     this.x = lastPoint.x + Math.cos(this.radians) * this.distance;
     this.y = lastPoint.y + Math.sin(this.radians) * this.distance;
     this.radians += this.speed;
