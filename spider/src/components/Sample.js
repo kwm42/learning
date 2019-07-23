@@ -10,16 +10,23 @@ class Sample extends Component {
     }
 
     render() {
-        var list = '';
-        if(this.state.content) {
-          list = this.state.content.map((item, index) => {
-            return (<li key={index}>{ index }</li>);
-          })
-        }
+        // var list = '';
+        // if(this.state.content) {
+        //   list = this.state.content.map((item, index) => {
+        //     return (
+        //     <li key={index}>
+        //         {/* <img src={ item.img }></img> */}
+        //         <p><a href={ item.detailLink }>{ item.title }</a></p>
+        //         <p>{ item.detailsItem} </p>
+        //         <p>{ `${item.priceDet}W  ${item.unitPrice}` }</p>
+        //         <p>{ item.commonAddress }</p>
+        //     </li>);
+        //   })
+        // }
         return (
           <div className="App">
             {this.state.content ? 
-            <div>{ list }</div> : 
+            <div>{ JSON.stringify(this.state.content) }</div> : 
             <div>no content.... loading...</div>}
     
             <Button type="primary" onClick={ ()=>this.fetchData() }>fetch data</Button>

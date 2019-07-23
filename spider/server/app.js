@@ -22,5 +22,3 @@ app.use(router.allowedMethods());
 app.use(logger());
 
 app.listen(3001);
-
-houseService.gethouseInfo();

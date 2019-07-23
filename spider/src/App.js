@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Sample from './components/Sample';
+// import Sample from './components/Sample';
+import MyLayout from './pages/layout';
 import './App.css';
 
 class App extends Component {
@@ -13,13 +14,14 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Sample></Sample>
+        {/* <Sample></Sample> */}
+        <MyLayout></MyLayout>
       </div>
     );
   }
 
   fetchContent(){
-    fetch('http://127.0.0.1:3001/hello')
+    fetch('/api/hello')
       .then(res => res.json())
       .then(res => {
         let { content } = res;
