@@ -29,16 +29,10 @@ function parseInfo(html){
         });
     });
     // fs.writeFileSync('./houseArray.txt', JSON.stringify(houseArray));
-    return JSON.stringify(houseArray);
+    return houseArray;
 }
 
 exports.gethouseInfo = async function(){
-    await superagent
-        // .get('https://github.com/visionmedia/superagent')
-        .get('https://fz.anjuke.com/sale/minhou/?from=SearchBar')
-        .query({})
-        .end((err, res) => {
-            // fs.writeFileSync('./resullt.txt', res.text);
-            return parseInfo(res.text);
-        });
+    let data = await superagent.get('https://fz.anjuke.com/sale/minhou/?from=SearchBar');
+    return parseInfo(data.text);
 }

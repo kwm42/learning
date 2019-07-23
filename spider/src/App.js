@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Sample from './components/Sample';
 import './App.css';
 
 class App extends Component {
@@ -12,11 +13,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {this.state.content ? 
-        <div>{ this.state.content }</div> : 
-        <div>no content.... loading...</div>}
-
-        <button onClick={ ()=>this.fetchContent() }>fetch data</button>
+        <Sample></Sample>
       </div>
     );
   }
@@ -29,7 +26,6 @@ class App extends Component {
         this.setState({
           content: content
         })
-        console.log(res)
       })
       .catch(err => {
         console.error(err);
