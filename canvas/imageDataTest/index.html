@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+    <script src="./html2canvas.js"></script>
+    <!-- <script src="./index.js"></script> -->
+    <script>
+        const canvas = document.querySelector('#canvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        ctx.fillStyle = '#fff';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = 'black';
+        ctx.arc(0, 0, 80, 0, Math.PI * 2);
+        ctx.fill();
+
+        let particles = [];
+        let  { data } = ctx.getImageData(0, 0, 100, 100);
+
+        for(var i = 0; i < data.length; i += 400){
+            let {r, g, b, a} = {
+                r: data[i],
+                g: data[i+1],
+                b: data[i+2],
+                a: data[i+3]
+            }
+            console.log(r, g, b, a)
+            if(r == 0 && g == 0 && b == 0){
+                particles.push({
+                    y: i / 4000,
+                    x: (i % 4000) / 400,
+                    i: i
+                })
+            }
+        }
+
+        ctx.clearRect(0, 0, 100, 100);
+        ctx.fillStyle = 'black';
+        particles.forEach(p => {
+            ctx.fillRect(p.x, p.y, 1, 1);
+        })
+
+        // var ele = document.getElementsByTagName('ul')[0];
+        // html2canvas(ele).then(dom => {
+        //     const { width, height } = dom; // canvas宽高
+        //     const ctx = dom.getContext('2d');
+        //     const data = ctx.getImageData(0, 0, width, height);
+        //     let array = [];
+        //     for(var i = 0; i < data.data.length; i+=4){
+        //         array.push({
+        //             r: data.data[i],
+        //             b: data.data[i+1],
+        //             r: data.data[i+2],
+        //             a: data.data[i+3],
+        //         })
+        //     }
+        //     document.write(JSON.stringify(array))
+        // });
+    </script>
+</body>
+
+</html>
