@@ -1,0 +1,11 @@
+import React, { Component } from 'react';
+
+const Page3 = () => {
+    return (
+        <div>
+            page 3
+        </div>
+    )
+}
+
+export default Page3;
