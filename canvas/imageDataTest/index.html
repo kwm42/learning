@@ -30,7 +30,7 @@
         const ctx = canvas.getContext('2d');
 
         let particles = [];
-        let step = 6;
+        let step = 10;
 
         function isBackgroundColor(r, g, b, a) {
             return backgroundColor.r == r &&
@@ -49,7 +49,7 @@
             gradient.addColorStop("1.0", "red");
             // 用渐变填色
             ctx.fillStyle = gradient;
-            ctx.fillText(text, 500, 530);
+            ctx.fillText(text, 50, 530);
             ctx.fill();
         }
 
@@ -70,12 +70,12 @@
                         particles.push({
                             targetX: j,
                             targetY: i,
-                            x: 0,
-                            y: 0,
+                            x: Math.random() * canvas.width,
+                            y: Math.random() * canvas.height,
                             k: k,
                             // style: `rgba(${r}, ${g}, ${b}, ${a})`
                             style: 'blue',
-                            delay: Math.random() * 100
+                            delay: Math.random() * 50 + 50
                         });
                     }
                 }
@@ -111,7 +111,7 @@
         function updateParticle(p) {
             if (p.delay > 0)--p.delay;
             else {
-                let step = .01;
+                let step = .02;
                 p.x += (p.targetX - p.x) * step;
                 p.y += (p.targetY - p.y) * step;
             }

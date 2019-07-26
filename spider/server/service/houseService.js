@@ -1,6 +1,7 @@
 const superagent = require('superagent');
 const cheerio = require('cheerio');
 const fs = require('fs');
+const dbUtils = require('../database/dbUtils');
 
 function parseInfo(html){
     let $ = cheerio.load(html);
@@ -28,6 +29,7 @@ function parseInfo(html){
             detailLink: detailLink
         });
     });
+    dbUtils.saveMany(houseArray);
     // fs.writeFileSync('./houseArray.txt', JSON.stringify(houseArray));
     return houseArray;
 }
@@ -35,4 +37,9 @@ function parseInfo(html){
 exports.gethouseInfo = async function(){
     let data = await superagent.get('https://fz.anjuke.com/sale/minhou/?from=SearchBar');
     return parseInfo(data.text);
+}
+
+exports.findAll = async function(){
+    let data = await dbUtils.findAll();
+    return data;
 }

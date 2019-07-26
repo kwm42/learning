@@ -17,6 +17,14 @@ router.get('/hello', async (ctx, next) => {
     }
 });
 
+router.get('/findAll', async (ctx, next) => {
+    var data = await houseService.findAll();
+    ctx.response.type = 'application/json';
+    ctx.response.body = {
+        content: data
+    }
+})
+
 app.use(router.routes());
 app.use(router.allowedMethods());
 app.use(logger());
